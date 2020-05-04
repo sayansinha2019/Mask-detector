@@ -13,6 +13,10 @@ import imutils
 import time
 import cv2
 import os
+from pygame import mixer
+
+mixer.init()
+sound = mixer.Sound('alarm.wav')
 
 gpus = tf.config.experimental.list_physical_devices('GPU')
 if gpus:
@@ -141,7 +145,11 @@ while True:
 
 		# include the probability in the label
 		label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
-
+		if label == "withoutMask":
+				try:
+			            sound.play()
+				except:  
+			            pass 
 		# display the label and bounding box rectangle on the output
 		# frame
 		cv2.putText(frame, label, (startX, startY - 10),
