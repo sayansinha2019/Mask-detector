@@ -7,3 +7,4 @@ During training (train.py), i applied on-the-fly mutations to our images in an e
 Nextly,i compiled the model with the Adam optimizer, a learning rate decay schedule, and binary cross-entropy.
 
 So  now run the Detect_mask_video.py , it will run live video feed from the camera and pass it to the deep learning tensorflow  model in order to  run out the frames ovver the video feed and classify  wether the person is using mask or not.
+    If the person is  not wearing mask then the Buzzer alarm will play out in console.
